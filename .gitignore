@@ -1,1 +1,6 @@
 .venv/
+datasets/
+*.ckpt
+*.pth
+__pycache__/
+*.pyc
