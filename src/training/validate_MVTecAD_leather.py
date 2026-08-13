@@ -42,10 +42,9 @@ if predictions is not None:
     for p in predictions:
         results_summary.append({
             "image_path": p.image_path[0],
-            "gt_label": bool(p.gt_label.item()),
-            "pred_score": float(p.pred_score.item()),
-            "pred_label": float(p.pred_label.item()),
-            "anomaly_map": float(p.anomaly_map.item()),
+            "gt_label": bool(p.gt_label),
+            "pred_score": float(p.pred_score),
+            "pred_label": float(p.pred_label),
     })
 
 with open("/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_val_scores.json", "w") as f:
