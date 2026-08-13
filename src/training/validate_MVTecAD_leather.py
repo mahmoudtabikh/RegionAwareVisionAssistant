@@ -48,5 +48,5 @@ if predictions is not None:
             "anomaly_map": float(p.anomaly_map.item()),
     })
 
-with open("results/leather_val_scores.json", "w") as f:
+with open("/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_val_scores.json", "w") as f:
     json.dump(results_summary, f, indent=2)
