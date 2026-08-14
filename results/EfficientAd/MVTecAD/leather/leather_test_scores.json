@@ -1,0 +1,602 @@
+[
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/000.png",
+    "gt_label": true,
+    "pred_score": 0.6497555375099182,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/001.png",
+    "gt_label": true,
+    "pred_score": 0.5090711712837219,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/002.png",
+    "gt_label": true,
+    "pred_score": 0.5243260860443115,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/003.png",
+    "gt_label": true,
+    "pred_score": 0.5156679749488831,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/004.png",
+    "gt_label": true,
+    "pred_score": 0.5040155649185181,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/005.png",
+    "gt_label": true,
+    "pred_score": 0.5185301899909973,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/006.png",
+    "gt_label": true,
+    "pred_score": 0.5121608972549438,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/007.png",
+    "gt_label": true,
+    "pred_score": 0.5099161267280579,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/008.png",
+    "gt_label": true,
+    "pred_score": 0.6187201142311096,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/011.png",
+    "gt_label": true,
+    "pred_score": 0.5173410773277283,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/014.png",
+    "gt_label": true,
+    "pred_score": 0.5253326296806335,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/015.png",
+    "gt_label": true,
+    "pred_score": 0.5346781611442566,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/016.png",
+    "gt_label": true,
+    "pred_score": 0.511140763759613,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/017.png",
+    "gt_label": true,
+    "pred_score": 0.5773016810417175,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/018.png",
+    "gt_label": true,
+    "pred_score": 0.5131365656852722,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/000.png",
+    "gt_label": true,
+    "pred_score": 0.5898965001106262,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/001.png",
+    "gt_label": true,
+    "pred_score": 0.5533178448677063,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/002.png",
+    "gt_label": true,
+    "pred_score": 0.5089895129203796,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/003.png",
+    "gt_label": true,
+    "pred_score": 0.7006943821907043,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/004.png",
+    "gt_label": true,
+    "pred_score": 0.6140746474266052,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/005.png",
+    "gt_label": true,
+    "pred_score": 0.5056291818618774,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/006.png",
+    "gt_label": true,
+    "pred_score": 0.5794984698295593,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/007.png",
+    "gt_label": true,
+    "pred_score": 0.6431655287742615,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/008.png",
+    "gt_label": true,
+    "pred_score": 0.5886611938476562,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/009.png",
+    "gt_label": true,
+    "pred_score": 0.5045795440673828,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/010.png",
+    "gt_label": true,
+    "pred_score": 0.5110971927642822,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/011.png",
+    "gt_label": true,
+    "pred_score": 0.5038034915924072,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/012.png",
+    "gt_label": true,
+    "pred_score": 0.5680830478668213,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/013.png",
+    "gt_label": true,
+    "pred_score": 0.5481480956077576,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/014.png",
+    "gt_label": true,
+    "pred_score": 0.5086010098457336,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/016.png",
+    "gt_label": true,
+    "pred_score": 0.5981542468070984,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/cut/018.png",
+    "gt_label": true,
+    "pred_score": 0.6140133738517761,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/fold/000.png",
+    "gt_label": true,
+    "pred_score": 0.7315912842750549,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/fold/001.png",
+    "gt_label": true,
+    "pred_score": 0.5262517333030701,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/fold/004.png",
+    "gt_label": true,
+    "pred_score": 0.7403186559677124,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/fold/006.png",
+    "gt_label": true,
+    "pred_score": 0.5085481405258179,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/fold/009.png",
+    "gt_label": true,
+    "pred_score": 0.5741381645202637,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/fold/010.png",
+    "gt_label": true,
+    "pred_score": 0.5152069330215454,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/fold/011.png",
+    "gt_label": true,
+    "pred_score": 0.5820904970169067,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/fold/013.png",
+    "gt_label": true,
+    "pred_score": 0.5581086874008179,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/fold/014.png",
+    "gt_label": true,
+    "pred_score": 0.5826156139373779,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/fold/015.png",
+    "gt_label": true,
+    "pred_score": 0.6560393571853638,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/fold/016.png",
+    "gt_label": true,
+    "pred_score": 0.8197693228721619,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/001.png",
+    "gt_label": true,
+    "pred_score": 0.5150248408317566,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/002.png",
+    "gt_label": true,
+    "pred_score": 0.5513707399368286,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/003.png",
+    "gt_label": true,
+    "pred_score": 0.5191564559936523,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/004.png",
+    "gt_label": true,
+    "pred_score": 0.5025178790092468,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/007.png",
+    "gt_label": true,
+    "pred_score": 0.5187551975250244,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/008.png",
+    "gt_label": true,
+    "pred_score": 0.597486138343811,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/009.png",
+    "gt_label": true,
+    "pred_score": 0.5038890838623047,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/010.png",
+    "gt_label": true,
+    "pred_score": 0.5001576542854309,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/011.png",
+    "gt_label": true,
+    "pred_score": 0.5093327164649963,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/012.png",
+    "gt_label": true,
+    "pred_score": 0.5116714239120483,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/013.png",
+    "gt_label": true,
+    "pred_score": 1.0,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/014.png",
+    "gt_label": true,
+    "pred_score": 1.0,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/016.png",
+    "gt_label": true,
+    "pred_score": 0.5117689371109009,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/glue/018.png",
+    "gt_label": true,
+    "pred_score": 0.9114410877227783,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/000.png",
+    "gt_label": false,
+    "pred_score": 0.4989914298057556,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/001.png",
+    "gt_label": false,
+    "pred_score": 0.4990628957748413,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/002.png",
+    "gt_label": false,
+    "pred_score": 0.49921223521232605,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/004.png",
+    "gt_label": false,
+    "pred_score": 0.498966246843338,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/006.png",
+    "gt_label": false,
+    "pred_score": 0.49886587262153625,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/007.png",
+    "gt_label": false,
+    "pred_score": 0.49886995553970337,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/008.png",
+    "gt_label": false,
+    "pred_score": 0.4989396035671234,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/009.png",
+    "gt_label": false,
+    "pred_score": 0.4988732635974884,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/010.png",
+    "gt_label": false,
+    "pred_score": 0.499003142118454,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/011.png",
+    "gt_label": false,
+    "pred_score": 0.4995386302471161,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/013.png",
+    "gt_label": false,
+    "pred_score": 0.500031590461731,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/015.png",
+    "gt_label": false,
+    "pred_score": 0.4993458390235901,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/016.png",
+    "gt_label": false,
+    "pred_score": 0.4992590546607971,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/017.png",
+    "gt_label": false,
+    "pred_score": 0.49938029050827026,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/018.png",
+    "gt_label": false,
+    "pred_score": 0.4989832639694214,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/019.png",
+    "gt_label": false,
+    "pred_score": 0.49912941455841064,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/021.png",
+    "gt_label": false,
+    "pred_score": 0.49913206696510315,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/022.png",
+    "gt_label": false,
+    "pred_score": 0.4987812936306,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/023.png",
+    "gt_label": false,
+    "pred_score": 0.4992102384567261,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/024.png",
+    "gt_label": false,
+    "pred_score": 0.4995902180671692,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/025.png",
+    "gt_label": false,
+    "pred_score": 0.49924999475479126,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/027.png",
+    "gt_label": false,
+    "pred_score": 0.499163419008255,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/028.png",
+    "gt_label": false,
+    "pred_score": 0.4992477297782898,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/029.png",
+    "gt_label": false,
+    "pred_score": 0.49906185269355774,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/030.png",
+    "gt_label": false,
+    "pred_score": 0.5003583431243896,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/good/031.png",
+    "gt_label": false,
+    "pred_score": 0.49915811419487,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/000.png",
+    "gt_label": true,
+    "pred_score": 0.5248175859451294,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/001.png",
+    "gt_label": true,
+    "pred_score": 0.5767257213592529,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/002.png",
+    "gt_label": true,
+    "pred_score": 0.5307701230049133,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/003.png",
+    "gt_label": true,
+    "pred_score": 0.7985581159591675,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/004.png",
+    "gt_label": true,
+    "pred_score": 0.6168397665023804,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/005.png",
+    "gt_label": true,
+    "pred_score": 0.5707029700279236,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/006.png",
+    "gt_label": true,
+    "pred_score": 0.607547402381897,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/007.png",
+    "gt_label": true,
+    "pred_score": 0.5446318984031677,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/008.png",
+    "gt_label": true,
+    "pred_score": 0.8632621765136719,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/009.png",
+    "gt_label": true,
+    "pred_score": 0.6435053944587708,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/011.png",
+    "gt_label": true,
+    "pred_score": 0.8420664072036743,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/012.png",
+    "gt_label": true,
+    "pred_score": 0.5621742606163025,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/013.png",
+    "gt_label": true,
+    "pred_score": 0.528033435344696,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/014.png",
+    "gt_label": true,
+    "pred_score": 0.5929527282714844,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/015.png",
+    "gt_label": true,
+    "pred_score": 0.5536772608757019,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/016.png",
+    "gt_label": true,
+    "pred_score": 0.5613817572593689,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/poke/017.png",
+    "gt_label": true,
+    "pred_score": 0.5584678649902344,
+    "pred_label": true
+  }
+]

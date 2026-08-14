@@ -30,13 +30,15 @@ model = EfficientAd.load_from_checkpoint(
     model_size="small",
 )
 engine = Engine()
-datamodule.setup(stage="predict")
+datamodule.setup(stage="test")
+
 
 predictions = engine.predict(
     model=model,
-    dataloaders=datamodule.val_dataloader(),
+    dataloaders=datamodule.test_dataloader(),
     ckpt_path=model_path,
 )
+print("Predictions:", len(predictions))
 results_summary = []
 if predictions is not None:
     for p in predictions:
@@ -44,8 +46,8 @@ if predictions is not None:
             "image_path": p.image_path[0],
             "gt_label": bool(p.gt_label.item()),
             "pred_score": float(p.pred_score.item()),
-            "pred_label": bool(p.pred_label.item()),
+            "pred_label": bool(p.pred_label.item()),  
     })
 
-with open("/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_val_scores.json", "w") as f:
+with open("/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_test_scores.json", "w") as f:
     json.dump(results_summary, f, indent=2)
