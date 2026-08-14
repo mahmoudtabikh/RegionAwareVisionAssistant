@@ -1,0 +1,92 @@
+[
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/color/002.png",
+    "gt_label": true,
+    "pred_score": 1.0,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/color/004.png",
+    "gt_label": true,
+    "pred_score": 0.5388144254684448,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/color/005.png",
+    "gt_label": true,
+    "pred_score": 1.0,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/color/006.png",
+    "gt_label": true,
+    "pred_score": 0.5969077348709106,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/color/007.png",
+    "gt_label": true,
+    "pred_score": 0.8177985548973083,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/combined/005.png",
+    "gt_label": true,
+    "pred_score": 0.5450301170349121,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/combined/009.png",
+    "gt_label": true,
+    "pred_score": 1.0,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/combined/010.png",
+    "gt_label": true,
+    "pred_score": 1.0,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/good/005.png",
+    "gt_label": false,
+    "pred_score": 0.4994696080684662,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/good/009.png",
+    "gt_label": false,
+    "pred_score": 0.4997042715549469,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/good/011.png",
+    "gt_label": false,
+    "pred_score": 0.4993973970413208,
+    "pred_label": false
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/hole/000.png",
+    "gt_label": true,
+    "pred_score": 1.0,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/hole/006.png",
+    "gt_label": true,
+    "pred_score": 0.5810014605522156,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/liquid/005.png",
+    "gt_label": true,
+    "pred_score": 0.5001757740974426,
+    "pred_label": true
+  },
+  {
+    "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/liquid/007.png",
+    "gt_label": true,
+    "pred_score": 0.5007035732269287,
+    "pred_label": true
+  }
+]
