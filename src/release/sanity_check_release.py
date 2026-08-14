@@ -8,7 +8,7 @@ from anomalib.models import EfficientAd
 from anomalib.data.utils import ValSplitMode
 
 # ===== CONFIGURATION =====
-CATEGORY = "leather"  # change to "wood" for the other model
+CATEGORY = "wood"  # change to "wood" for the other model
 MVTECAD_DIR = "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD"
 IMAGENET_DIR = "/home/mahmoud/projects/RegionAwareVisionAssistant/data/imagenette"
 CKPT_PATH = f"/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/{CATEGORY}/v0/weights/lightning/model.ckpt"
