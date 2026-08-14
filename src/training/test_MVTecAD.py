@@ -1,21 +1,22 @@
 import torch
+import cv2
 import json
+import numpy as np
 from anomalib.data import MVTecAD
 from anomalib.engine import Engine
 from anomalib.models import EfficientAd
 from anomalib.data.utils import ValSplitMode
-from anomalib.deploy import TorchInferencer
 
 torch.set_float32_matmul_precision('medium')
 
 MVTecAD_dir="/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD"
 imagenet_dir = "/home/mahmoud/projects/RegionAwareVisionAssistant/data/imagenette"
-model_path = "/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/wood/v0/weights/lightning/model.ckpt"
+model_path = "/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/v0/weights/lightning/model.ckpt"
 # 2. Create a dataset
 # MVTecAD is a popular dataset for anomaly detection
 datamodule = MVTecAD(
     root=MVTecAD_dir,  # Path to download/store the dataset
-    category="wood",  # MVTec category to use
+    category="leather",  # MVTec category to use
     train_batch_size=1,  # Number of images per training batch
     eval_batch_size=1,  # Number of images per validation/test batch
     val_split_mode=ValSplitMode.FROM_TEST,
@@ -38,16 +39,36 @@ predictions = engine.predict(
     dataloaders=datamodule.test_dataloader(),
     ckpt_path=model_path,
 )
-print("Predictions:", len(predictions))
-results_summary = []
-if predictions is not None:
-    for p in predictions:
-        results_summary.append({
-            "image_path": p.image_path[0],
-            "gt_label": bool(p.gt_label.item()),
-            "pred_score": float(p.pred_score.item()),
-            "pred_label": bool(p.pred_label.item()),  
+threshold = 0.5046368241  # leather's threshold, from your saved metrics
+
+full_results = []
+for p in predictions:  # predictions from leather's val set — confirm you're using leather's predict() output here, not leather's leftover variable
+    anomaly_map_np = p.anomaly_map.cpu().numpy().squeeze()
+    binary_mask = (anomaly_map_np >= threshold).astype(np.uint8) * 255
+
+    contours, _ = cv2.findContours(binary_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    regions = []
+    for i, contour in enumerate(contours):
+        area = cv2.contourArea(contour)
+        x, y, w, h = cv2.boundingRect(contour)
+        bbox_area = w * h
+        compactness = area / bbox_area if bbox_area > 0 else 0
+        regions.append({
+            "region_id": f"region_{i+1}",
+            "polygon": contour.squeeze().tolist(),
+            "bbox": [int(x), int(y), int(w), int(h)],
+            "area": float(area),
+            "compactness": float(compactness),
+        })
+
+    full_results.append({
+        "image_path": p.image_path[0],
+        "category": "leather",
+        "gt_label": bool(p.gt_label.item()),
+        "pred_score": float(p.pred_score.item()),
+        "regions": regions,
     })
 
-with open("/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/wood/wood_test_scores.json", "w") as f:
-    json.dump(results_summary, f, indent=2)
+with open("/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_test_full.json", "w") as f:
+    json.dump(full_results, f, indent=2)
