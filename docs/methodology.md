@@ -59,14 +59,25 @@ physical defect exists.
 
 ### Wood
 
-- **Threshold:** _[pending]_
-- **Precision:** _[pending]_
-- **Recall:** _[pending]_
-- **Known limitation:** _[pending]_
+- **Threshold: `0.5002`**
+- **Precision: 94%** (a small number of false alarms on the 64-image held-out test set)
+- **Recall: 98%** (nearly all real defects detected)
+- **Known limitation:** liquid-type defects consistently scored closest to the
+  normal range, making them the hardest case for the model to catch confidently.
+  Scratch-type defects showed high score variance — some scored clearly above
+  the threshold, others fell much closer to it — meaning detection confidence
+  for scratches is inconsistent rather than uniformly weak.
 
 These are test-set performance measurements, not guarantees about every future
 production image. A "normal" result does not guarantee defect-free material, since
 the model can miss some defects.
+
+**Category comparison:** the same threshold-selection methodology produced
+different operating points for each material. Leather's threshold favors
+precision (no false alarms, but ~8% of defects missed), while wood's threshold
+favors recall (nearly all defects caught, but ~6% false alarm rate). This
+reflects differences in how each material's normal-vs-defect score distributions
+separate, not a difference in methodology.
 
 ## 4. What the model does and does not tell you
 
@@ -135,7 +146,29 @@ A future version may provide additional calibrated information.
 > `0.5046`, indicating a strong anomaly signal. This does not mean a 91% probability
 > of a defect — the anomaly score is not a calibrated probability or confidence value.
 
-_[Wood examples to be added once threshold and evaluation are available.]_
+### Example: normal result close to the threshold (wood)
+
+**Anomaly score: `0.499`**
+
+> **Result: Normal.**
+>
+> The anomaly score is `0.499`, just below the wood defect threshold of `0.5002`.
+> The model classifies this image as normal, but the score sits very close to the
+> decision boundary. Given that liquid-type defects are known to score close to
+> the normal range for this model, a result this close to the threshold may
+> warrant a closer visual check.
+>
+> This score is not a probability or confidence percentage.
+
+### Example: defect result with a strong signal (wood)
+
+**Anomaly score: `0.71`**
+
+> **Result: Anomaly detected.**
+>
+> The anomaly score is `0.71`, well above the wood defect threshold of `0.5002`,
+> indicating a clear anomaly signal. This does not mean a 71% probability of a
+> defect — the anomaly score is not a calibrated probability or confidence value.
 
 ## 7. Important principle
 
