@@ -3,6 +3,7 @@ import json
 import os
 import numpy as np
 import onnxruntime as ort
+from src.lib.inference import load_onnx_session, run_onnx_inference
 from anomalib.data import MVTecAD
 from anomalib.engine import Engine
 from anomalib.models import EfficientAd
@@ -57,27 +58,6 @@ def get_ckpt_predictions(model, datamodule, num_samples):
     )
 
     return predictions[:num_samples]
-
-
-def load_onnx_session():
-    session = ort.InferenceSession(
-        ONNX_PATH,
-        providers=["CPUExecutionProvider"],
-    )
-    return session
-
-
-def run_onnx_inference(session, image_tensor):
-    input_name = session.get_inputs()[0].name
-    output_names = [o.name for o in session.get_outputs()]
-
-    ort_inputs = {
-        input_name: image_tensor.cpu().numpy().astype(np.float32)
-    }
-
-    ort_outputs = session.run(output_names, ort_inputs)
-
-    return dict(zip(output_names, ort_outputs))
 
 
 def compare_predictions(ckpt_predictions, onnx_session):
@@ -212,7 +192,7 @@ def main():
         NUM_SAMPLES,
     )
 
-    onnx_session = load_onnx_session()
+    onnx_session = load_onnx_session(CATEGORY)
 
     print(
         "ONNX input info:",
