@@ -1,0 +1,114 @@
+{
+    "summary": {
+        "category": "leather",
+        "num_samples": 10,
+        "score_max_abs_diff": 1.2218952178955078e-05,
+        "score_mean_abs_diff": 5.322694778442383e-06,
+        "map_max_abs_diff": 2.9921531677246094e-05,
+        "map_mean_abs_diff": 2.6588154469209255e-07,
+        "mask_max_disagreement_percentage": 0.00152587890625,
+        "mask_mean_disagreement_percentage": 0.000152587890625
+    },
+    "per_sample": [
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/000.png",
+            "ckpt_score": 0.6497555375099182,
+            "onnx_score": 0.6497607231140137,
+            "score_abs_diff": 5.185604095458984e-06,
+            "map_max_abs_diff": 1.1622905731201172e-05,
+            "map_mean_abs_diff": 2.9479360819095746e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/001.png",
+            "ckpt_score": 0.5090711712837219,
+            "onnx_score": 0.5090814828872681,
+            "score_abs_diff": 1.0311603546142578e-05,
+            "map_max_abs_diff": 1.4066696166992188e-05,
+            "map_mean_abs_diff": 2.3087022782419808e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/002.png",
+            "ckpt_score": 0.5243260860443115,
+            "onnx_score": 0.5243222713470459,
+            "score_abs_diff": 3.814697265625e-06,
+            "map_max_abs_diff": 1.3947486877441406e-05,
+            "map_mean_abs_diff": 2.2703898139297962e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/003.png",
+            "ckpt_score": 0.5156679749488831,
+            "onnx_score": 0.5156577825546265,
+            "score_abs_diff": 1.0192394256591797e-05,
+            "map_max_abs_diff": 1.2993812561035156e-05,
+            "map_mean_abs_diff": 2.8019303499604575e-07,
+            "mask_disagreeing_pixels": 1,
+            "mask_disagreement_percentage": 0.00152587890625
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/004.png",
+            "ckpt_score": 0.5040155649185181,
+            "onnx_score": 0.5040145516395569,
+            "score_abs_diff": 1.0132789611816406e-06,
+            "map_max_abs_diff": 3.993511199951172e-06,
+            "map_mean_abs_diff": 2.5317604013253003e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/005.png",
+            "ckpt_score": 0.5185301899909973,
+            "onnx_score": 0.5185303688049316,
+            "score_abs_diff": 1.7881393432617188e-07,
+            "map_max_abs_diff": 6.496906280517578e-06,
+            "map_mean_abs_diff": 2.3759957912261598e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/006.png",
+            "ckpt_score": 0.5121608972549438,
+            "onnx_score": 0.5121586322784424,
+            "score_abs_diff": 2.2649765014648438e-06,
+            "map_max_abs_diff": 4.6193599700927734e-06,
+            "map_mean_abs_diff": 2.1842970454599708e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/007.png",
+            "ckpt_score": 0.5099161267280579,
+            "onnx_score": 0.5099123120307922,
+            "score_abs_diff": 3.814697265625e-06,
+            "map_max_abs_diff": 5.155801773071289e-06,
+            "map_mean_abs_diff": 2.6213547243969515e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/008.png",
+            "ckpt_score": 0.6187201142311096,
+            "onnx_score": 0.6187323331832886,
+            "score_abs_diff": 1.2218952178955078e-05,
+            "map_max_abs_diff": 2.9921531677246094e-05,
+            "map_mean_abs_diff": 4.0405984691460617e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/leather/test/color/011.png",
+            "ckpt_score": 0.5173410773277283,
+            "onnx_score": 0.5173453092575073,
+            "score_abs_diff": 4.231929779052734e-06,
+            "map_max_abs_diff": 9.059906005859375e-06,
+            "map_mean_abs_diff": 2.505189513613004e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        }
+    ]
+}

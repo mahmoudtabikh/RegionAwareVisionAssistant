@@ -1,0 +1,114 @@
+{
+    "summary": {
+        "category": "wood",
+        "num_samples": 10,
+        "score_max_abs_diff": 5.614757537841797e-05,
+        "score_mean_abs_diff": 1.4019012451171874e-05,
+        "map_max_abs_diff": 6.830692291259766e-05,
+        "map_mean_abs_diff": 9.400942872161977e-07,
+        "mask_max_disagreement_percentage": 0.0030517578125,
+        "mask_mean_disagreement_percentage": 0.0006103515625
+    },
+    "per_sample": [
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/color/000.png",
+            "ckpt_score": 0.5856924057006836,
+            "onnx_score": 0.58574378490448,
+            "score_abs_diff": 5.137920379638672e-05,
+            "map_max_abs_diff": 6.0439109802246094e-05,
+            "map_mean_abs_diff": 4.5820252125849947e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/color/001.png",
+            "ckpt_score": 1.0,
+            "onnx_score": 1.0,
+            "score_abs_diff": 0.0,
+            "map_max_abs_diff": 5.2928924560546875e-05,
+            "map_mean_abs_diff": 1.1214406185899861e-06,
+            "mask_disagreeing_pixels": 2,
+            "mask_disagreement_percentage": 0.0030517578125
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/color/003.png",
+            "ckpt_score": 0.9391377568244934,
+            "onnx_score": 0.939125657081604,
+            "score_abs_diff": 1.2099742889404297e-05,
+            "map_max_abs_diff": 4.655122756958008e-05,
+            "map_mean_abs_diff": 9.320001481682993e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/combined/000.png",
+            "ckpt_score": 1.0,
+            "onnx_score": 1.0,
+            "score_abs_diff": 0.0,
+            "map_max_abs_diff": 2.9981136322021484e-05,
+            "map_mean_abs_diff": 1.0229114195681177e-06,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/combined/001.png",
+            "ckpt_score": 0.8186371326446533,
+            "onnx_score": 0.8186932802200317,
+            "score_abs_diff": 5.614757537841797e-05,
+            "map_max_abs_diff": 5.698204040527344e-05,
+            "map_mean_abs_diff": 7.093894964782521e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/combined/002.png",
+            "ckpt_score": 0.6215927004814148,
+            "onnx_score": 0.6215866804122925,
+            "score_abs_diff": 6.020069122314453e-06,
+            "map_max_abs_diff": 1.7344951629638672e-05,
+            "map_mean_abs_diff": 4.4548096411745064e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/combined/003.png",
+            "ckpt_score": 0.6782468557357788,
+            "onnx_score": 0.6782323122024536,
+            "score_abs_diff": 1.4543533325195312e-05,
+            "map_max_abs_diff": 2.2172927856445312e-05,
+            "map_mean_abs_diff": 6.432410373236053e-07,
+            "mask_disagreeing_pixels": 1,
+            "mask_disagreement_percentage": 0.00152587890625
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/combined/004.png",
+            "ckpt_score": 1.0,
+            "onnx_score": 1.0,
+            "score_abs_diff": 0.0,
+            "map_max_abs_diff": 4.8995018005371094e-05,
+            "map_mean_abs_diff": 1.2080913620593492e-06,
+            "mask_disagreeing_pixels": 1,
+            "mask_disagreement_percentage": 0.00152587890625
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/combined/006.png",
+            "ckpt_score": 1.0,
+            "onnx_score": 1.0,
+            "score_abs_diff": 0.0,
+            "map_max_abs_diff": 6.830692291259766e-05,
+            "map_mean_abs_diff": 1.8817813725036103e-06,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        },
+        {
+            "image_path": "/home/mahmoud/projects/RegionAwareVisionAssistant/data/MVTecAD/wood/test/combined/007.png",
+            "ckpt_score": 1.0,
+            "onnx_score": 1.0,
+            "score_abs_diff": 0.0,
+            "map_max_abs_diff": 4.7147274017333984e-05,
+            "map_mean_abs_diff": 9.784039320948068e-07,
+            "mask_disagreeing_pixels": 0,
+            "mask_disagreement_percentage": 0.0
+        }
+    ]
+}
