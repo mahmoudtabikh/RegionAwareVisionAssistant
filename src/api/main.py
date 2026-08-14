@@ -1,9 +1,11 @@
 import onnxruntime as ort
 import numpy as np
 import cv2
+import torch
+from torchvision.transforms.v2 import Resize
 from fastapi import FastAPI, UploadFile, File
-
-app = FastAPI()
+from contextlib import asynccontextmanager
+from fastapi import HTTPException
 
 
 def load_onnx_session(category):
@@ -30,19 +32,46 @@ def run_onnx_inference(session, image):
     return dict(zip(output_names, ort_outputs))
 
 def process_image(image):
+    # Convert BGR to RGB
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    image = cv2.resize(image, (256, 256))
-    image = image.astype(np.float32) / 255.0
-    image = np.transpose(image, (2, 0, 1))  # HWC -> CHW
-    image = np.expand_dims(image, axis=0)
+    
+    # Convert numpy array (HWC) to torch tensor (BCHW) with batch dimension
+    image_tensor = torch.from_numpy(image).permute(2, 0, 1).unsqueeze(0).float()
+    
+    # Scale to [0, 1]
+    image_tensor = image_tensor / 255.0
+    
+    # Apply resize with antialias (matches anomalib's preprocessing)
+    resize_transform = Resize((256, 256), antialias=True)
+    image_tensor = resize_transform(image_tensor)
+    
+    # Convert back to numpy for ONNX Runtime (BCHW format, [0, 1] range)
+    image = image_tensor.numpy()
+    
     return image
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # runs once at startup
+    app.state.sessions = {
+        "leather": load_onnx_session("leather"),
+        "wood": load_onnx_session("wood"),
+    }
+    yield
+    # (anything after yield runs once at shutdown — not needed here)
+
+app = FastAPI(lifespan=lifespan)
 
 @app.post("/predict/")
 async def predict(category: str, file: UploadFile = File(...)):
-    contents = await file.read()  # raw bytes
+    session = app.state.sessions.get(category)
+    if session is None:
+        raise HTTPException(status_code=400, detail="Invalid category. Must be 'leather' or 'wood'.")
+    contents = await file.read()
     nparr = np.frombuffer(contents, np.uint8)
     image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
     image = process_image(image)
-    session = load_onnx_session(category)
     results = run_onnx_inference(session, image)
+    results = {k: v.tolist() for k, v in results.items()}
     return results
