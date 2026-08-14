@@ -3,7 +3,7 @@ from anomalib.models import EfficientAd
 from anomalib.engine import Engine
 
 # ===== CONFIGURATION =====
-CATEGORY = "leather"  # change to "wood" for the other model
+CATEGORY = "wood"  # change to "wood" for the other model
 MODEL_PATH = f"/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/{CATEGORY}/v0/weights/lightning/model.ckpt"
 IMAGENET_DIR = "/home/mahmoud/projects/RegionAwareVisionAssistant/data/imagenette"
 INPUT_SIZE = [256, 256]
