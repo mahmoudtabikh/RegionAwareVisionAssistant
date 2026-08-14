@@ -2,7 +2,6 @@ import torch
 import json
 import os
 import numpy as np
-import onnxruntime as ort
 from src.lib.inference import load_onnx_session, run_onnx_inference
 from anomalib.data import MVTecAD
 from anomalib.engine import Engine
@@ -69,7 +68,7 @@ def compare_predictions(ckpt_predictions, onnx_session):
 
         onnx_outputs = run_onnx_inference(
             onnx_session,
-            image_tensor,
+            image_tensor.cpu().numpy().astype(np.float32),
         )
 
         onnx_score = float(onnx_outputs["pred_score"].squeeze())
