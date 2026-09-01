@@ -78,7 +78,7 @@ special considerations when scores are close to the threshold.**
 
 ## 6. Example explanations
 
-**See [examples.md](examples.md) for concrete examples showing how to explain
+**See [examples_leather.md](examples_leather.md) and [examples_wood.md](examples_wood.md) for concrete examples showing how to explain
 results for both leather and wood, including cases where scores are close to or
 well above the threshold.**
 
