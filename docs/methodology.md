@@ -51,9 +51,6 @@ physical defect exists.
 Each material category has its own separately trained model with a unique threshold,
 precision, recall, and known limitations.
 
-**See [category_performance.md](category_performance.md) for detailed thresholds,
-test-set metrics, and known limitations for each material.**
-
 ## 4. What the model does and does not tell you
 
 The current model provides a **binary classification** based on the anomaly score
