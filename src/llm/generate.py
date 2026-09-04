@@ -3,6 +3,7 @@ from langchain_ollama import OllamaLLM
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_qdrant import QdrantVectorStore
 from src.rag.build_index import load_documents
+from qdrant_client.models import Filter, FieldCondition, MatchAny
 
 
 def setup_document_retrieval():
@@ -13,7 +14,19 @@ def setup_document_retrieval():
 
 def prompt_using_retrieved_documents(query, vector_store, results, metrics, category):
     # Retrieve relevant documents based on the query
-    retrieved_chunks = vector_store.similarity_search(query, k=3)
+    
+    retrieved_chunks = vector_store.similarity_search(
+        query,
+        k=3,
+        filter=Filter(
+            must=[
+                FieldCondition(
+                key="metadata.category",
+                match=MatchAny(any=[category, "general"])
+            )
+        ]
+        )
+        )
 
     # Combine the retrieved documents into a single context string
     context = "\n".join([doc.page_content for doc in retrieved_chunks])
@@ -33,26 +46,21 @@ def prompt_using_retrieved_documents(query, vector_store, results, metrics, cate
 
         Follow the explanation rules from the context. Do not state a probability
         or confidence percentage.
+        Do not reference file names or suggest the reader consult additional documents.
+        Write the explanation as a complete, standalone response.
         """.strip()
     return prompt
 
 
-def main():
-    result_idx = 0
-    vector_store = setup_document_retrieval()
-    category = "leather"
+def call_qa_model(vector_store, model, result_idx=0, category="leather"):
     results_root_path = f"/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/{category}"
     results = json.load(open(f"{results_root_path}/{category}_test_scores.json", 'r'))[result_idx]
     metrics = json.load(open(f"{results_root_path}/{category}_final_metrics.json", 'r'))
-    print("writing prompt...")
-    prompt = prompt_using_retrieved_documents("leather defect threshold", vector_store, results, metrics, category)
-    print(prompt)
-    model = OllamaLLM(model="qwen3:8b")
-    print("invoking model...")
-
-    result = model.invoke(input=prompt)
-    print(result)
-
+    prompt = prompt_using_retrieved_documents(f"{category} defect threshold", vector_store, results, metrics, category)
+    return model.invoke(input=prompt)
 
 if __name__ == "__main__":
-    main()
+    vector_store = setup_document_retrieval()
+    model = OllamaLLM(model="qwen3:8b")
+    explanation = call_qa_model(vector_store, model, result_idx=0, category="leather")
+    print(explanation)
