@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import cv2
 from fastapi import FastAPI, UploadFile, File
@@ -7,6 +8,8 @@ from src.lib.inference import load_onnx_session, run_onnx_inference, process_ima
 from src.lib.regions import extract_regions
 from src.llm.generate import setup_document_retrieval, call_qa_model_with_prediction
 from langchain_ollama import OllamaLLM
+
+OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -20,7 +23,7 @@ async def lifespan(app: FastAPI):
         "wood": 0.5001757740974426,  # grabbed from /home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_final_metrics.json
     }
     app.state.vector_store = setup_document_retrieval()
-    app.state.llm = OllamaLLM(model="qwen3:8b")
+    app.state.llm = OllamaLLM(model="qwen3:8b", base_url=OLLAMA_URL)
     yield
 
 app = FastAPI(lifespan=lifespan)

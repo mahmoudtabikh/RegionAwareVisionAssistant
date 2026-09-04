@@ -8,6 +8,7 @@ from qdrant_client.models import Filter, FieldCondition, MatchAny
 from qdrant_client import QdrantClient
 
 QDRANT_URL = os.environ.get("QDRANT_URL", "http://localhost:6333")
+OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
 
 def setup_document_retrieval():
     embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
@@ -78,6 +79,6 @@ if __name__ == "__main__":
     threshold = final_metrics["threshold"]
 
     vector_store = setup_document_retrieval()
-    model = OllamaLLM(model="qwen3:8b")
+    model = OllamaLLM(model="qwen3:8b", base_url=OLLAMA_URL)
     explanation = call_qa_model_with_prediction(vector_store, model, prediction=results[0], threshold=threshold)
     print(explanation)
