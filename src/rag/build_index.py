@@ -1,5 +1,9 @@
 import os
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_qdrant import QdrantVectorStore
 from langchain_core.documents import Document
+
+QDRANT_URL = os.environ.get("QDRANT_URL", "http://localhost:6333")
 
 def get_paths(root_dir):
     paths_dict = {dir.replace('.md', ''): f"{root_dir}/{dir}" for dir in os.listdir(root_dir)}
@@ -39,6 +43,14 @@ def load_documents(root_dir):
     ]
 
 if __name__ == "__main__":
+    embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
     docs_path = os.environ.get("DOCS_PATH", "docs")
     documents = load_documents(docs_path)
-    print(len(documents))
+    QdrantVectorStore.from_documents(
+        documents,
+        embedding=embeddings,
+        location=QDRANT_URL,
+        collection_name="methodology_docs",
+    )
+    print(f"Indexed {len(documents)} documents into Qdrant at {QDRANT_URL}")
+

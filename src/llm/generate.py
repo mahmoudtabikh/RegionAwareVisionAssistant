@@ -5,14 +5,18 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_qdrant import QdrantVectorStore
 from src.rag.build_index import load_documents
 from qdrant_client.models import Filter, FieldCondition, MatchAny
+from qdrant_client import QdrantClient
 
 QDRANT_URL = os.environ.get("QDRANT_URL", "http://localhost:6333")
 
 def setup_document_retrieval():
     embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
-    docs_path = os.environ.get("DOCS_PATH", "docs")
-    documents = load_documents(docs_path)
-    vector_store = QdrantVectorStore.from_documents(documents, embedding=embeddings, location=QDRANT_URL, collection_name="methodology_docs")
+    client = QdrantClient(url=QDRANT_URL)
+    vector_store = QdrantVectorStore(
+        client=client,
+        embedding=embeddings,
+        collection_name="methodology_docs",
+    )
     return vector_store
 
 def prompt_using_retrieved_documents(vector_store, prediction, threshold):
