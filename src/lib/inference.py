@@ -1,8 +1,10 @@
 import onnxruntime as ort
 import cv2
 import torch
+import os
 from torchvision.transforms.v2 import Resize
 
+BASE_PATH = os.environ.get("MODEL_BASE_PATH", ".")
 
 def process_image(image):
     # Convert BGR to RGB
@@ -26,7 +28,7 @@ def process_image(image):
 def load_onnx_session(category):
     if category not in ["leather", "wood"]:
         raise ValueError("Invalid category. Must be 'leather' or 'wood'.")
-    onnx_path = f"/home/mahmoud/projects/RegionAwareVisionAssistant/results/exports/{category}/weights/onnx/model.onnx"
+    onnx_path = f"{BASE_PATH}/results/exports/{category}/weights/onnx/model.onnx"
     session = ort.InferenceSession(
         onnx_path,
         providers=["CPUExecutionProvider"],

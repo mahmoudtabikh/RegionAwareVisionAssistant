@@ -1,5 +1,5 @@
 import json
-import random
+import os
 from langchain_ollama import OllamaLLM
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_qdrant import QdrantVectorStore
@@ -9,7 +9,8 @@ from qdrant_client.models import Filter, FieldCondition, MatchAny
 
 def setup_document_retrieval():
     embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
-    documents = load_documents("/home/mahmoud/projects/RegionAwareVisionAssistant/docs")
+    docs_path = os.environ.get("DOCS_PATH", "docs")
+    documents = load_documents(docs_path)
     vector_store = QdrantVectorStore.from_documents(documents, embedding=embeddings, location=":memory:", collection_name="methodology_docs")
     return vector_store
 

@@ -39,5 +39,6 @@ def load_documents(root_dir):
     ]
 
 if __name__ == "__main__":
-    documents = load_documents("/home/mahmoud/projects/RegionAwareVisionAssistant/docs")
+    docs_path = os.environ.get("DOCS_PATH", "docs")
+    documents = load_documents(docs_path)
     print(len(documents))

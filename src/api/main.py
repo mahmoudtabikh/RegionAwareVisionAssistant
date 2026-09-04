@@ -57,4 +57,3 @@ async def explain(prediction: dict):
     return {
         "explanation": explanation
     }
-
