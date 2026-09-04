@@ -5,6 +5,8 @@ from contextlib import asynccontextmanager
 from fastapi import HTTPException
 from src.lib.inference import load_onnx_session, run_onnx_inference, process_image
 from src.lib.regions import extract_regions
+from src.llm.generate import setup_document_retrieval, call_qa_model_with_prediction
+from langchain_ollama import OllamaLLM
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -17,8 +19,9 @@ async def lifespan(app: FastAPI):
         "leather": 0.504636824131012, # grabbed from /home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_final_metrics.json
         "wood": 0.5001757740974426,  # grabbed from /home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_final_metrics.json
     }
+    app.state.vector_store = setup_document_retrieval()
+    app.state.llm = OllamaLLM(model="qwen3:8b")
     yield
-    # (anything after yield runs once at shutdown — not needed here)
 
 app = FastAPI(lifespan=lifespan)
 
@@ -45,3 +48,13 @@ async def predict(category: str, file: UploadFile = File(...)):
         "pred_score": pred_score,
         "regions": regions,
     }
+
+@app.post("/explain/")
+async def explain(prediction: dict):
+    vector_store = app.state.vector_store
+    model = app.state.llm
+    explanation = call_qa_model_with_prediction(vector_store, model, prediction=prediction, threshold=app.state.thresholds[prediction['category']])
+    return {
+        "explanation": explanation
+    }
+
