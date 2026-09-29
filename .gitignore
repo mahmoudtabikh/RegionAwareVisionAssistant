@@ -5,4 +5,5 @@ __pycache__/
 *.pyc
 data/
 .vscode/RegionAwareVisionAssistant.code-workspace
-qdrant_data/
+qdrant_data/qdrant_data/
+*.egg-info/
