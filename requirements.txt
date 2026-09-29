@@ -35,7 +35,9 @@ h2==4.4.1
 hf-xet==1.6.0
 hpack==4.2.0
 httpcore==1.0.9
+httpcore2==2.13.1
 httpx==0.28.1
+httpx2==2.13.1
 huggingface_hub==1.27.0
 hyperframe==6.1.0
 idna==3.18
@@ -130,7 +132,7 @@ PyYAML==6.0.3
 pyzmq==27.1.0
 qdrant-client==1.19.0
 regex==2026.9.3
--e git+https://github.com/mahmoudtabikh/RegionAwareVisionAssistant.git@0a320dc2ddc9cca35fbcc8c2c06f134a3d84f7f1#egg=region_aware_vision_assistant
+-e git+https://github.com/mahmoudtabikh/RegionAwareVisionAssistant.git@02a7d25156656905423e0f6b49807da2a649d6fa#egg=region_aware_vision_assistant
 requests==2.34.2
 requests-toolbelt==1.0.0
 rich==15.0.0
@@ -160,6 +162,7 @@ tqdm==4.70.0
 traitlets==5.16.1
 transformers==5.16.1
 triton==3.7.1
+truststore==0.10.4
 typer==0.27.2
 typeshed_client==2.13.0
 typing-inspection==0.4.4
