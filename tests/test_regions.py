@@ -3,7 +3,7 @@
 import numpy as np
 import pytest
 
-from ..src.lib.regions import extract_regions
+from src.lib.regions import extract_regions
 
 
 def test_returns_no_regions_when_all_values_are_below_threshold():
