@@ -1,14 +1,15 @@
 import json
 import os
-from langchain_ollama import OllamaLLM
+
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_ollama import OllamaLLM
 from langchain_qdrant import QdrantVectorStore
-from src.rag.build_index import load_documents
-from qdrant_client.models import Filter, FieldCondition, MatchAny
 from qdrant_client import QdrantClient
+from qdrant_client.models import FieldCondition, Filter, MatchAny
 
 QDRANT_URL = os.environ.get("QDRANT_URL", "http://localhost:6333")
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
+
 
 def setup_document_retrieval():
     embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
@@ -20,13 +21,18 @@ def setup_document_retrieval():
     )
     return vector_store
 
+
 def prompt_using_retrieved_documents(vector_store, prediction, threshold):
     # Retrieve relevant documents based on the query
-    category = prediction['category']
+    category = prediction["category"]
     region_summary = [
-    {"region_id": r["region_id"], "area": r["area"], "compactness": r["compactness"]}
-    for r in prediction["regions"]
-]
+        {
+            "region_id": r["region_id"],
+            "area": r["area"],
+            "compactness": r["compactness"],
+        }
+        for r in prediction["regions"]
+    ]
     query = f"{category} defect threshold"
     retrieved_chunks = vector_store.similarity_search(
         query,
@@ -34,12 +40,11 @@ def prompt_using_retrieved_documents(vector_store, prediction, threshold):
         filter=Filter(
             must=[
                 FieldCondition(
-                key="metadata.category",
-                match=MatchAny(any=[category, "general"])
-            )
-        ]
-        )
-        )
+                    key="metadata.category", match=MatchAny(any=[category, "general"])
+                )
+            ]
+        ),
+    )
 
     # Combine the retrieved documents into a single context string
     context = "\n".join([doc.page_content for doc in retrieved_chunks])
@@ -53,7 +58,7 @@ def prompt_using_retrieved_documents(vector_store, prediction, threshold):
 
         Result to explain:
         Category: {category}
-        Anomaly score: {prediction['pred_score']}
+        Anomaly score: {prediction["pred_score"]}
         Threshold: {threshold}
         regions detected: {region_summary}
 
@@ -70,15 +75,27 @@ def call_qa_model_with_prediction(vector_store, model, prediction, threshold):
     prompt = prompt_using_retrieved_documents(vector_store, prediction, threshold)
     return model.invoke(input=prompt)
 
-if __name__ == "__main__":
 
-    results = json.load(open("/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_test_full.json", 'r'))
+if __name__ == "__main__":
+    results = json.load(
+        open(
+            "/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_test_full.json",
+            "r",
+        )
+    )
     category = "leather"
     results_root_path = f"/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/{category}"
-    final_metrics = json.load(open("/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_final_metrics.json", 'r'))
+    final_metrics = json.load(
+        open(
+            "/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_final_metrics.json",
+            "r",
+        )
+    )
     threshold = final_metrics["threshold"]
 
     vector_store = setup_document_retrieval()
     model = OllamaLLM(model="qwen3:8b", base_url=OLLAMA_URL)
-    explanation = call_qa_model_with_prediction(vector_store, model, prediction=results[0], threshold=threshold)
+    explanation = call_qa_model_with_prediction(
+        vector_store, model, prediction=results[0], threshold=threshold
+    )
     print(explanation)

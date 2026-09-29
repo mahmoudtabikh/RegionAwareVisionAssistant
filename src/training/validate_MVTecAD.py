@@ -1,9 +1,10 @@
-import torch
 import json
+
+import torch
 from anomalib.data import MVTecAD
+from anomalib.data.utils import ValSplitMode
 from anomalib.engine import Engine
 from anomalib.models import EfficientAd
-from anomalib.data.utils import ValSplitMode
 
 # ===== CONFIGURATION =====
 CATEGORY = "wood"  # change to "leather" for the other model
@@ -15,7 +16,7 @@ VAL_SPLIT_RATIO = 0.2
 SEED = 42
 # ==========================
 
-torch.set_float32_matmul_precision('medium')
+torch.set_float32_matmul_precision("medium")
 
 
 def build_datamodule():
@@ -56,12 +57,14 @@ def build_results_summary(predictions):
     results_summary = []
     if predictions is not None:
         for p in predictions:
-            results_summary.append({
-                "image_path": p.image_path[0],
-                "gt_label": bool(p.gt_label.item()),
-                "pred_score": float(p.pred_score.item()),
-                "pred_label": bool(p.pred_label.item()),
-            })
+            results_summary.append(
+                {
+                    "image_path": p.image_path[0],
+                    "gt_label": bool(p.gt_label.item()),
+                    "pred_score": float(p.pred_score.item()),
+                    "pred_label": bool(p.pred_label.item()),
+                }
+            )
     return results_summary
 
 

@@ -7,7 +7,9 @@ from src.api import main as api
 
 @pytest.fixture
 def client(monkeypatch):
-    monkeypatch.setattr(api, "load_onnx_session", lambda category: f"{category}-session")
+    monkeypatch.setattr(
+        api, "load_onnx_session", lambda category: f"{category}-session"
+    )
     monkeypatch.setattr(api, "setup_document_retrieval", lambda: "vector-store")
     monkeypatch.setattr(api, "OllamaLLM", lambda **kwargs: "llm")
 

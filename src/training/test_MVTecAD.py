@@ -1,11 +1,12 @@
-import torch
 import json
-import numpy as np
-from lib.regions import extract_regions
+
+import torch
 from anomalib.data import MVTecAD
+from anomalib.data.utils import ValSplitMode
 from anomalib.engine import Engine
 from anomalib.models import EfficientAd
-from anomalib.data.utils import ValSplitMode
+
+from lib.regions import extract_regions
 
 # ===== CONFIGURATION =====
 CATEGORY = "leather"  # change to "wood" for the other model
@@ -18,7 +19,7 @@ VAL_SPLIT_RATIO = 0.2
 SEED = 42
 # ==========================
 
-torch.set_float32_matmul_precision('medium')
+torch.set_float32_matmul_precision("medium")
 
 
 def build_datamodule():
@@ -61,13 +62,15 @@ def build_full_results(predictions, threshold):
         anomaly_map_np = p.anomaly_map.cpu().numpy().squeeze()
         regions = extract_regions(anomaly_map_np, threshold)
 
-        full_results.append({
-            "image_path": p.image_path[0],
-            "category": CATEGORY,
-            "gt_label": bool(p.gt_label.item()),
-            "pred_score": float(p.pred_score.item()),
-            "regions": regions,
-        })
+        full_results.append(
+            {
+                "image_path": p.image_path[0],
+                "category": CATEGORY,
+                "gt_label": bool(p.gt_label.item()),
+                "pred_score": float(p.pred_score.item()),
+                "regions": regions,
+            }
+        )
     return full_results
 
 

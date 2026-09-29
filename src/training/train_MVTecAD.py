@@ -1,7 +1,7 @@
+import torch
 from anomalib.data import MVTecAD
 from anomalib.engine import Engine
 from anomalib.models import EfficientAd
-import torch
 
 # ===== CONFIGURATION =====
 CATEGORY = "wood"  # change to "leather" for the other model
@@ -11,7 +11,7 @@ MAX_STEPS = 70000
 MODEL_SIZE = "small"
 # ==========================
 
-torch.set_float32_matmul_precision('medium')
+torch.set_float32_matmul_precision("medium")
 
 
 def build_datamodule():
