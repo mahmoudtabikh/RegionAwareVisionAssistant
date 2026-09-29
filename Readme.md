@@ -75,6 +75,19 @@ docker exec -it <ollama-container-name> ollama pull qwen3:8b   # first run only
 
 Then visit `http://localhost:8000/docs` for the interactive API (Swagger UI). `POST /predict/` with an image + category (`leather` or `wood`) returns structured detection output; feed that output into `POST /explain/` for a grounded natural-language explanation.
 
+## Local development / testing
+
+```bash
+pip install -r requirements.txt
+pytest tests/ -v
+```
+
+Test coverage: region extraction (`extract_regions` — thresholding, contour detection, bbox/area/compactness on synthetic anomaly maps), image preprocessing (`process_image` — colour-space conversion, resize, normalization), RAG document loading (`load_documents`, category/doc-type classification), and both API endpoints (`/predict/`, `/explain/`) with the CV/LLM/vector-store dependencies mocked out. 18 tests, all passing.
+
+This is unit/integration-level coverage of the code paths, not a systematic evaluation of retrieval or LLM generation quality — see "What's verified vs. not yet" below.
+
+Linting: `ruff check .` / `ruff format .`.
+
 ## Project structure
 
 ```
@@ -95,9 +108,8 @@ data/         — MVTec AD + Imagenette (gitignored, auto-downloaded on first tr
 **Verified**: ONNX export parity (quantitative), val/test split independence (zero overlap, checked directly), threshold selection methodology (leakage-free), retrieval correctness (spot-checked across categories and query types), end-to-end containerized stack (all three services, service-name networking, not host-networking luck).
 
 **Not yet done** (deliberate scope boundary, not an oversight):
-- Formal, systematic evaluation of retrieval quality and LLM rule-compliance across a large test set (currently spot-checked, not exhaustively tested)
+- Formal, systematic evaluation of retrieval quality and LLM rule-compliance across a large test set (unit/integration tests exist and pass — see "Local development / testing" — but generation/retrieval *quality* at scale is currently spot-checked, not exhaustively evaluated)
 - Calibrated confidence (Platt/isotonic regression) — the system currently reports threshold-based binary classification only; raw anomaly score is explicitly documented as *not* a probability
-- Automated test suite
 - Measured end-to-end latency numbers (predict alone vs. predict+explain)
 
 ## Background
