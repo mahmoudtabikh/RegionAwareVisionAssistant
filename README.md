@@ -66,6 +66,19 @@ Leather and wood land on different points of the precision/recall trade-off with
 
 **Known limitations**, documented not hidden: leather struggles most with subtle discoloration; wood struggles most with liquid-type defects and is inconsistent on scratches. Details in `docs/category_performance_leather.md` and `docs/category_performance_wood.md`.
 
+## Performance
+
+Measured end-to-end, over HTTP, against the running Docker Compose stack (50 runs each, 3 warmup runs discarded, on the RTX 3070 / WSL2 dev machine):
+
+| | mean | median | p95 | min | max |
+|---|---|---|---|---|---|
+| `/predict/` only | 155.5 ms | 152.4 ms | 187.3 ms | 132.2 ms | 210.8 ms |
+| `/predict/` + `/explain/` | 16.7 s | 16.7 s | 24.6 s | 6.4 s | 34.8 s |
+
+`/predict/` is full-stack HTTP latency (request handling, image decode/preprocessing, ONNX inference on CPU) — not raw model forward-pass time, which is faster; EfficientAD-S itself is a millisecond-scale model, the 150ms here is the full request cycle around it.
+
+The `/explain/` step dominates total latency and has high variance. Qwen3's "thinking" mode (extended reasoning before the final answer) is enabled and is the likely main driver of both the high mean and the spread — disabling it is a known, not-yet-done optimization (see below).
+
 ## Running it
 
 ```bash
@@ -110,7 +123,7 @@ data/         — MVTec AD + Imagenette (gitignored, auto-downloaded on first tr
 **Not done yet** — deliberate scope boundary, not an oversight:
 - A systematic evaluation of retrieval quality and LLM rule-compliance at scale (tests exist and pass — see above — but generation/retrieval quality itself is spot-checked, not exhaustively evaluated)
 - Calibrated confidence (Platt/isotonic). Right now it's threshold-based binary classification only; the raw score is explicitly documented as not a probability
-- Measured end-to-end latency numbers (predict alone vs. predict+explain)
+- Disabling Qwen3's thinking mode for the explanation step — likely the main lever on the `/explain/` latency and variance noted above, not yet applied
 
 ## Background
 
