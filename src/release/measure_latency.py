@@ -73,8 +73,8 @@ def main():
         call_predict(args.image, args.category)
 
     print(f"Measuring /predict/ ({MEASURED_RUNS} runs)...")
-    predict_durations, last_prediction = time_calls(
-        call_predict, MEASURED_RUNS, args.image, args.category
+    predict_durations, _ = time_calls(
+    call_predict, MEASURED_RUNS, args.image, args.category
     )
     summarize("/predict/ only", predict_durations)
 
