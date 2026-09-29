@@ -17,3 +17,5 @@ dependencies = [
     "qdrant-client",
     "sentence-transformers",
 ]
+[tool.ruff.lint.per-file-ignores]
+"src/api/*.py" = ["B008"]
