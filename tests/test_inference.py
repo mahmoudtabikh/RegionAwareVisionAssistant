@@ -63,6 +63,8 @@ def test_run_onnx_inference_maps_output_names():
 
     assert result == {"heatmap": heatmap, "score": score}
     args, kwargs = session.run.call_args
+    # run_onnx_inference calls session.run(output_names, ort_inputs) positionally,
+    # not with keyword arguments.
     assert args[0] == ["heatmap", "score"]
-    assert kwargs["output_names"] if False else True
-    assert kwargs == {"input_tensor": image}
+    assert args[1] == {"input_tensor": image}
+    assert kwargs == {}
