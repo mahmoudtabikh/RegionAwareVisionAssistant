@@ -58,7 +58,7 @@ Built as a portfolio project extending professional production CV/edge-AI experi
 | Category | Threshold | Precision | Recall | F1 | Test set size |
 |---|---|---|---|---|---|
 | Leather | 0.5046 | 1.00 | 0.92 | 0.958 | 100 (held-out) |
-| Wood | 0.5002 | 0.94 | 0.98 | — | 64 (held-out) |
+| Wood | 0.5002 | 0.94 | 0.98 | 0.959 | 64 (held-out) |
 
 Thresholds were selected on a validation split (20% of MVTec's test set, stratified, seed-fixed) and applied unmodified to a disjoint held-out test split — verified to have zero image overlap with validation.
 
