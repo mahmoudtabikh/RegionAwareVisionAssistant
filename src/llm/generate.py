@@ -77,20 +77,21 @@ def call_qa_model_with_prediction(vector_store, model, prediction, threshold):
 
 
 if __name__ == "__main__":
-    results = json.load(
-        open(
-            "/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_test_full.json",
-            "r",
-        )
-    )
+    with open(
+        "/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_test_full.json",
+        "r",
+    ) as f:
+        results = json.load(f)
+
     category = "leather"
     results_root_path = f"/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/{category}"
-    final_metrics = json.load(
-        open(
-            "/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_final_metrics.json",
-            "r",
-        )
-    )
+
+    with open(
+        "/home/mahmoud/projects/RegionAwareVisionAssistant/results/EfficientAd/MVTecAD/leather/leather_final_metrics.json",
+        "r",
+    ) as f:
+        final_metrics = json.load(f)
+
     threshold = final_metrics["threshold"]
 
     vector_store = setup_document_retrieval()
