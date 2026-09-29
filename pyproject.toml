@@ -16,6 +16,12 @@ dependencies = [
     "langchain-ollama",
     "qdrant-client",
     "sentence-transformers",
+    "anomalib",
+    "pytest",
+    "httpx",
+    "ruff",
 ]
+[project.optional-dependencies]
+dev = ["pytest", "httpx", "ruff"]
 [tool.ruff.lint.per-file-ignores]
 "src/api/*.py" = ["B008"]
